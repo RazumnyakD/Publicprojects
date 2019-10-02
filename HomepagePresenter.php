@@ -54,9 +54,14 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
             'typ_projektu' => $values->limit,
             'web_projekt' => $values->web,
         ]);
+    {
+        $message = "Děkujeme za vložený projekt :)";
+        $this->flashMessage($message,  'success');
 
-        $this->flashMessage('Děkuji za nově vložený projekt :) ', 'success');
-        $this->redirect('this');
+
+            $this->redirect('Homepage:confirm');
+
+    }
 
 
     }
